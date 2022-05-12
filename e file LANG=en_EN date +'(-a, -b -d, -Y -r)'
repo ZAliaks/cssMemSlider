@@ -1,0 +1,30 @@
+[33mcommit cf530f6e2ae50c91a0ed6d1083fc46ef2d7c82a0[m[33m ([m[1;36mHEAD -> [m[1;32mgh-pages[m[33m)[m
+Author: ZAliaks <zui@tut.by>
+Date:   Thu May 12 17:31:59 2022 +0300
+
+    feat: проковырялся весь день в носу LANG=en_EN date +'(%a, %b %d, %Y %r)'
+
+[33mcommit fbbaab0d2a8d2226113d96cdf7d1f0e020b239c3[m
+Author: ZAliaks <zui@tut.by>
+Date:   Wed May 11 16:18:15 2022 +0300
+
+    feat: add fotos for slider, add index.html with slider, inputs, labels and te
+    xts; add style.css with main styles (Wed, May 11, 2022 04:18:15 PM)
+
+[33mcommit 2cba60124d19d877c3929418fe3c8bce6015362e[m
+Author: ZAliaks <zui@tut.by>
+Date:   Tue May 10 15:48:37 2022 +0300
+
+    feat: add fotos for slider, add index.html with slider, inputs, labels and texts; add style.css with main styles (Tue, May 10, 2022 03:48:36 PM)
+
+[33mcommit 333cd7e8e7cc075ae37a8dd8bca0eb2076eba718[m[33m ([m[1;31morigin/gh-pages[m[33m)[m
+Author: Александр Зуй <96618289+ZAliaks@users.noreply.github.com>
+Date:   Tue May 10 12:46:05 2022 +0300
+
+    docs: update readme.md
+
+[33mcommit 1ab01d97ddde8e37031b856699a746c94e38809f[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Александр Зуй <96618289+ZAliaks@users.noreply.github.com>
+Date:   Tue May 10 12:42:29 2022 +0300
+
+    Initial commit
