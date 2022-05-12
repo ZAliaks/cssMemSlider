@@ -8,7 +8,7 @@ body {
 }
 .wrapper {
   height: 80vh;
-  width: fit-content;
+  width: 95%;
   margin: 1em auto 1em;
   position: relative;
 }
@@ -25,12 +25,12 @@ body {
 }
 .slide {
   height: inherit;
-  position: absolute;
-  width: inherit;
-  /* background-size: contain;
-  background-repeat: no-repeat; */
+  /* position: absolute; */
+  /* width: inherit; */
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-/* .sl1 {
+.sl1 {
   background-image: url(./assets/1.jpg);
 }
 .sl2 {
@@ -47,7 +47,7 @@ body {
 }
 .sl6 {
   background-image: url(./assets/6.jpg);
-} */
+}
 /* .wrapper .controls {
   left: 50%;
   margin-left: -98px;
@@ -70,7 +70,7 @@ body {
   display: block;
   height: 12px;
   left: -4px;
-  position: absolute;
+  /* position: absolute; */
   top: -4px;
   width: 12px;
   border-radius: 50%;
@@ -98,21 +98,20 @@ body {
 }
 
 .slide {
-  height: inherit;
+  /* height: inherit; */
   opacity: 0;
-  position: absolute;
-  width: inherit;
-  z-index: 0;
-  /* background-size: contain;
-  background-repeat: no-repeat; */
+  /* position: absolute; */  
+  z-index: 0;    
   transform: scale(0.3);
   transition: transform ease-in-out 0.5s, opacity ease-in-out 0.5s;
 }
-text {
+.text {
+  animation: slideIn 1s forwards;
+  display: inline-block;
+  transform: translateX(10%);
   opacity: 0;
   z-index: 0;
 }
-
 #sl1:checked ~ .slider > .sl1,
 #sl2:checked ~ .slider > .sl2,
 #sl3:checked ~ .slider > .sl3,
@@ -124,17 +123,18 @@ text {
   z-index: 1;
   transform: scale(1);
 }
+.container{
+  display: flex;
+  justify-content: space-between;
+}
 .text_container {
-  overflow: hidden;  
+  overflow: hidden;
+  display:block;
+  width: 50%;  
   color: black;
   font-size: 12px;
 }
-.text{  
-  display:block;
-  opacity: 0;
-  z-index: 0;
-  position: absolute;
-}
+
 #sl1:checked ~ .text_container > .mem1,
 #sl2:checked ~ .text_container > .mem2,
 #sl3:checked ~ .text_container > .mem3,
@@ -143,22 +143,22 @@ text {
 #sl6:checked ~ .text_container > .mem6,
 #sl7:checked ~ .text_container > .mem7 {
   opacity: 1;
-  z-index: 1;
-  /* animation-duration: 3s;
-  animation-name: slidein; */
-  /* transform: scale(2);   */
+  z-index: 1;  
+  /* animation-name: slideIn; */
+  transform: scale(2);  
 }
 
 img{
   height: 100%;
   width: auto;
 }
+
 p {
   animation-duration: 3s;
   animation-name: slidein;
 }
 
-@keyframes slidein {
+@keyframes slideIn {
   from {
     /* margin-left: 100%; */
     width: 0%;
@@ -180,4 +180,12 @@ span {
   transform: translateY(100%);
   transition: .3s;
   display: inline-block;
+}
+@media(max-width: 768px){
+  .container{
+    flex-direction: column;
+  }
+  .controls{    
+    text-align: center;
+  }
 }
