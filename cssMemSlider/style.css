@@ -7,17 +7,21 @@ body {
   background-color: beige;
 }
 .wrapper {
+  display: flex;
+  flex-direction: column;
   height: 80vh;
   width: 95%;
   margin: 1em auto 1em;
-  position: relative;
+  overflow: hidden;
+  /* position: relative; */
 }
 .slider {
+  display: flex;
   background-color: bisque;
   height: inherit;
-  /* overflow: hidden; */
-  position: relative;
-  width: inherit;
+  width: 715%;
+  overflow: hidden;
+  transition: transform ease-in-out 0.5s, opacity ease-in-out 0.5s;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 .wrapper > input {
@@ -25,10 +29,9 @@ body {
 }
 .slide {
   height: inherit;
-  /* position: absolute; */
-  /* width: inherit; */
+  width: 14%;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;  
 }
 .sl1 {
   background-image: url(./assets/1.jpg);
@@ -46,6 +49,9 @@ body {
   background-image: url(./assets/5.jpg);
 }
 .sl6 {
+  background-image: url(./assets/4.jpg);
+}
+.sl7 {
   background-image: url(./assets/6.jpg);
 }
 /* .wrapper .controls {
@@ -99,56 +105,73 @@ body {
 
 .slide {
   /* height: inherit; */
-  opacity: 0;
-  /* position: absolute; */  
-  z-index: 0;    
-  transform: scale(0.3);
-  transition: transform ease-in-out 0.5s, opacity ease-in-out 0.5s;
+  /* opacity: 0; */
+  /* overflow: hidden; */
+  /* position: absolute; */
+  /* z-index: 0;    
+  transform: scale(0.3); */
+  /* transition: transform ease-in-out 0.5s, opacity ease-in-out 0.5s; */
+  /* transition: all ease .5s; */
 }
 .text {
   animation: slideIn 1s forwards;
-  display: inline-block;
-  transform: translateX(10%);
-  opacity: 0;
-  z-index: 0;
+  width: 0;
+  /* display: inline-block; */
+  /* transform: translateX(10%); */
+  /* opacity: 0; */
+  /* z-index: 0; */
 }
-#sl1:checked ~ .slider > .sl1,
-#sl2:checked ~ .slider > .sl2,
-#sl3:checked ~ .slider > .sl3,
-#sl4:checked ~ .slider > .sl4,
-#sl5:checked ~ .slider > .sl5,
-#sl6:checked ~ .slider > .sl6,
-#sl7:checked ~ .slider > .sl7 {
+/* #sl1:checked ~ .slider > .sl1 {
   opacity: 1;
-  z-index: 1;
-  transform: scale(1);
+} */
+#sl2:checked ~ .slider {
+  transform: translateX(-14%);
+ }
+#sl3:checked ~ .slider {
+  transform: translateX(-28%);
 }
-.container{
+#sl4:checked ~ .slider {
+  transform: translateX(-42%);
+}
+#sl5:checked ~ .slider {
+  transform: translateX(-56%);
+}
+#sl6:checked ~ .slider {
+  transform: translateX(-70%);
+}
+#sl7:checked ~ .slider {  
+  transform: translateX(-84%);
+}
+.container {
   display: flex;
   justify-content: space-between;
 }
-.text_container {
+.text_container {  
   overflow: hidden;
-  display:block;
-  width: 50%;  
+  /* display:block; */
+  width: 50%;
   color: black;
-  font-size: 12px;
+  font-size: 1rem;
+}
+.text-slider{
+  display: flex;
 }
 
-#sl1:checked ~ .text_container > .mem1,
-#sl2:checked ~ .text_container > .mem2,
-#sl3:checked ~ .text_container > .mem3,
-#sl4:checked ~ .text_container > .mem4,
-#sl5:checked ~ .text_container > .mem5,
-#sl6:checked ~ .text_container > .mem6,
-#sl7:checked ~ .text_container > .mem7 {
-  opacity: 1;
-  z-index: 1;  
+#sl1:checked ~ .container .text_container > .mem1,
+#sl2:checked ~ .container .text_container > .mem2,
+#sl3:checked ~ .container .text_container > .mem3,
+#sl4:checked ~ .container .text_container > .mem4,
+#sl5:checked ~ .container .text_container > .mem5,
+#sl6:checked ~ .container .text_container > .mem6,
+#sl7:checked ~ .container .text_container > .mem7 {
+  /* opacity: 1; */
+  /* z-index: 1;   */
   /* animation-name: slideIn; */
-  transform: scale(2);  
+  transform: scale(2);
+  /* line-height: 20 px; */
 }
 
-img{
+img {
   height: 100%;
   width: auto;
 }
@@ -160,12 +183,12 @@ p {
 
 @keyframes slideIn {
   from {
-    /* margin-left: 100%; */
+    margin-left: 100%;
     width: 0%;
   }
 
   to {
-    /* margin-left: 0%; */
+    margin-left: 0%;
     width: 100%;
   }
 
@@ -175,17 +198,17 @@ p {
     width: 75%;
   } */
 }
-span {
+/* span {
   position: relative;
   transform: translateY(100%);
   transition: .3s;
   display: inline-block;
-}
-@media(max-width: 768px){
-  .container{
+} */
+@media (max-width: 768px) {
+  .container {
     flex-direction: column;
   }
-  .controls{    
+  .controls {
     text-align: center;
   }
 }
