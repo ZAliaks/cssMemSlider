@@ -166,7 +166,7 @@ body {
 
 @media (max-width: 768px) {
   .txt-cntr-container {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
   .text-container {   
     width: 90%;
