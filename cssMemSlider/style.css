@@ -5,7 +5,7 @@
 }
 :root {
   --main-color: beige;
-  --hv-color: bisque;
+  --hv-color: rgb(155, 230, 121);
   --lb-bg-color: #ddd;
 }
 body {
@@ -14,28 +14,25 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
-  height: 80vh;
-  max-width: 75rem;
-  width: 95%;
+  max-height: 49rem;
+  max-width: 61rem;
+  width: 90%;
   margin: 1em auto 1em;
   overflow: hidden;
 }
 .slider {
-  display: flex;
-  background-color: var(--hv-color);
-  height: inherit;
+  display: flex;  
+  height: 65vw;
   width: 715%;
-  overflow: hidden;
   transition: transform ease-in-out 0.5s;
-  border-radius: 1rem;
-  /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); */
 }
 .wrapper > input {
   display: none;
 }
 .slide {
-  height: inherit;
-  width: 14%;
+  height: auto;
+  width: 14%;  
+  border-radius: 1rem;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -79,19 +76,20 @@ body {
 #sl7:checked ~ .slider {
   transform: translateX(-84%);
 }
-.container {
+.txt-cntr-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1rem 0;
+  margin-top: 3vh;
 }
 .text-slider {
   display: flex;
+  align-items: center;
   overflow: hidden;
   width: 714%;
   transition: transform ease-in-out 0.5s;
 }
-.text_container {
+.text-container {
   overflow: hidden;
   width: 50%;
   font-size: 1.5rem;
@@ -104,29 +102,29 @@ body {
   font-weight: 600;
 }
 
-#sl2:checked ~ .container .text_container .text-slider {
+#sl2:checked ~ .txt-cntr-container .text-container .text-slider {
   transform: translateX(-14%);
 }
-#sl3:checked ~ .container .text_container .text-slider {
+#sl3:checked ~ .txt-cntr-container .text-container .text-slider {
   transform: translateX(-28%);
 }
-#sl4:checked ~ .container .text_container .text-slider {
+#sl4:checked ~ .txt-cntr-container .text-container .text-slider {
   transform: translateX(-42%);
 }
-#sl5:checked ~ .container .text_container .text-slider {
+#sl5:checked ~ .txt-cntr-container .text-container .text-slider {
   transform: translateX(-56%);
 }
-#sl6:checked ~ .container .text_container .text-slider {
+#sl6:checked ~ .txt-cntr-container .text-container .text-slider {
   transform: translateX(-70%);
 }
-#sl7:checked ~ .container .text_container .text-slider {
+#sl7:checked ~ .txt-cntr-container .text-container .text-slider {
   transform: translateX(-84%);
 }
 .wrapper label {
   cursor: pointer;
   display: inline-block;
-  height: 3rem;
-  width: 3rem;
+  height: 2.7rem;
+  width: 2.8rem;
   border: 0.7rem solid var(--main-color);
   border-radius: 50%;
   background-color: var(--lb-bg-color);
@@ -140,44 +138,50 @@ body {
   transform: scale(1.2);
   background-color: black;
 }
-
-.controls {
+/* .controls {
   align-items: center;
-}
+} */
 
-#sl1:checked ~ .container .controls #lb1 {
+#sl1:checked ~ .txt-cntr-container .controls #lb1 {
   background-color: var(--hv-color);
 }
-#sl2:checked ~ .container .controls #lb2 {
+#sl2:checked ~ .txt-cntr-container .controls #lb2 {
   background-color: var(--hv-color);
 }
-#sl3:checked ~ .container .controls #lb3 {
+#sl3:checked ~ .txt-cntr-container .controls #lb3 {
   background-color: var(--hv-color);
 }
-#sl4:checked ~ .container .controls #lb4 {
+#sl4:checked ~ .txt-cntr-container .controls #lb4 {
   background-color: var(--hv-color);
 }
-#sl5:checked ~ .container .controls #lb5 {
+#sl5:checked ~ .txt-cntr-container .controls #lb5 {
   background-color: var(--hv-color);
 }
-#sl6:checked ~ .container .controls #lb6 {
+#sl6:checked ~ .txt-cntr-container .controls #lb6 {
   background-color: var(--hv-color);
 }
-#sl7:checked ~ .container .controls #lb7 {
+#sl7:checked ~ .txt-cntr-container .controls #lb7 {
   background-color: var(--hv-color);
 }
 
 @media (max-width: 768px) {
-  .container {
+  .txt-cntr-container {
     flex-direction: column;
   }
-  .controls {
-    text-align: center;
-  }
-  .text_container {
-    overflow: hidden;
-    width: 80%;
+  .text-container {   
+    width: 90%;
     font-size: 1rem;
     text-align: center;
+  }
+}
+@media (max-width: 375px) {
+  .text-container {   
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  .wrapper label {    
+    height: 2.2rem;
+    width: 2.2rem;
+    border: 0.4rem solid var(--main-color);    
   }
 }
